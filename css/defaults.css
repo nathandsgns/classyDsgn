@@ -11,8 +11,129 @@ body{
     margin:0;
     width:100%;
     height:100vh;
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
+
+
+.navs{
+    width:auto;
+    height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.nav-content{
+    width:20rem;
+    height: 100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+
+    background:rgba(0,0,0,.9);
+
+    position:fixed;
+    top:0%;
+    right:-20rem;
+    z-index:1;
+
+    transition:right 0.5s ease;
+}
+.navs input{
+    display:none;
+}
+.navs label{
+    width:2rem;
+    height:2rem;
+    margin:3vw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+
+    position:fixed;
+    top:0%;
+    right:0%;
+    z-index:2;
+}
+.nav-label{
+    width:90%;
+    height:10%;
+
+    border-radius:.25rem;
+    background:white;
+
+}
+.nav-item{
+    text-align:center;
+    font-size: 2rem;
+    text-decoration:none;
+
+    transition:color 0.5s ease;
+}
+.selected{
+    padding:2vh;
+    color:black;
+    background:white;
+}
+.nav-item:hover{
+    color:gray;
+}
+#nav-toggle:checked ~.nav-content{
+    right:0;
+}
+
+@media only screen and (max-width:800px){
+    .nav-content{
+        width:100%;
+        right:-100%;
+    }
+    #nav-toggle:checked ~.nav-content{
+        right:0;
+    }
+}
+
+.btn{
+    width:2rem;
+    height:2rem;
+    margin:3vw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+    border-radius:1rem;
+    
+    position:absolute;
+    top:0%;
+    left:0%;
+    z-index:1;
+    
+    transition:background 0.5s ease;
+}
+.btn-design{
+    width:.5rem;
+    height:.5rem;
+
+    border-top:2px solid black;
+    border-left:2px solid black;
+
+    transition:border-top 0.5s ease, border-left 0.5s ease;
+}
+.btn:hover{
+    background:black;
+}
+.btn:hover .btn-design{
+    border-top:2px solid white;
+    border-left:2px solid white;
+}
+
+
 
 footer{
     width:100%;
@@ -23,10 +144,6 @@ footer{
 
     background:black;
 }
-
-
-
-
 .logof{
     width:2rem;
     height:2rem;
@@ -90,6 +207,9 @@ footer{
     z-index:1;
 }
 @media only screen and (max-width:800px){
+    .navf{
+        width:70%;
+    }
     .socialsf{
         width:80%;
     }
@@ -97,4 +217,13 @@ footer{
     .logofa{
         font-size:3rem;
     }
+}
+
+::-webkit-scrollbar{
+    width:2px;
+    background:black;
+}
+::-webkit-scrollbar-thumb{
+    width:2px;
+    background:white;
 }

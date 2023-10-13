@@ -1,0 +1,128 @@
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.s{
+    width:100%;
+    height:auto;
+
+    background:url(https://images.unsplash.com/photo-1693881420291-a5e6897c0349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80);
+    background-position: center;
+    background-size: cover;
+}
+
+.btn{
+    width:2rem;
+    height:2rem;
+    margin:3vw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+    border-radius:1rem;
+    
+    position:absolute;
+    top:0%;
+    left:0%;
+    z-index:1;
+    
+    transition:background 0.5s ease;
+}
+.btn-design{
+    width:.5rem;
+    height:.5rem;
+
+    border-top:2px solid black;
+    border-left:2px solid black;
+
+    transition:border-top 0.5s ease, border-left 0.5s ease;
+}
+.btn:hover{
+    background:black;
+}
+.btn:hover .btn-design{
+    border-top:2px solid white;
+    border-left:2px solid white;
+}
+
+
+.contents{
+    width:100%;
+    height:50vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.5);
+}
+.title{
+    margin:0 0 2vh 0;
+    font-size: 5rem;
+}
+.descr{
+    width:75%;
+    text-align:center;
+}
+@media only screen and (max-width:800px){
+    .title{
+        text-align:center;
+    }
+}
+
+.s1{
+    width:100%;
+    height:auto;
+    padding:10vh 0;
+
+    background:black;
+}
+.contents1{
+    width: 100%;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:space-around;
+    justify-content:space-around;
+}
+.content1{
+    width:20rem;
+    height:20rem;
+    margin:2vh;
+
+    background:url(https://images.unsplash.com/photo-1693881420291-a5e6897c0349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80);
+    background-position: center;
+    background-size: cover;
+}
+.opacity1{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+
+    background:rgba(0,0,0,.7);
+    transition:background 0.5s ease;
+}
+.opacity1:hover{
+    background:rgba(0,0,0,0);
+}
+
+.title1{
+    margin:2vw;
+    font-size: 2rem;
+    opacity:1;
+    transition:opacity 0.5s ease;
+}
+.opacity1:hover .title1{
+    opacity:0;
+}
+
+.title, .descr,.contents1,.navs{
+    animation:fadeIn 2s ease;
+}

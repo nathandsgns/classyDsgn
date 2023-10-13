@@ -29,140 +29,6 @@
     background:white;
 }
 
-.navs{
-    width:100%;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:1;
-}
-.nav-content{
-    width:20rem;
-    height: 100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-around;
-
-    background:rgba(0,0,0,.9);
-
-    position:fixed;
-    top:0%;
-    right:-20rem;
-    z-index:1;
-
-    transition:right 0.5s ease;
-}
-.navs input{
-    display:none;
-}
-.navs label{
-    width:2rem;
-    height:2rem;
-    margin:3vw;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-around;
-
-    position:fixed;
-    top:0%;
-    right:0%;
-    z-index:2;
-}
-.nav-label{
-    width:90%;
-    height:10%;
-
-    border-radius:.25rem;
-    background:white;
-
-}
-.nav-item{
-    text-align:center;
-    font-size: 2rem;
-    text-decoration:none;
-
-    transition:color 0.5s ease;
-}
-.nav-item:hover{
-    color:gray;
-}
-#nav-toggle:checked ~.nav-content{
-    right:0;
-}
-
-@media only screen and (max-width:800px){
-    .nav-content{
-        width:100%;
-        right:-100%;
-    }
-    #nav-toggle:checked ~.nav-content{
-        right:0;
-    }
-}
-
-/* .nav{
-    width:10rem;
-    height:100vh;
-    padding:0 0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:space-around;
-
-    background:rgba(0,0,0,.9);
-    border-bottom: 2px solid gray;
-    position:absolute;
-    top:0%;
-    left:-10rem;
-    z-index:1;
-
-    transition:left
-}
-.nav-item{
-    margin:2vh 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-    transition:color 0.5s ease;
-}
-.nav-item:hover{
-    color:gray;
-}
-.nav-toggle{
-    width:10vh;
-    height:10vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:none;
-    position:absolute;
-    top:0%;
-    right:0%;
-    z-index:1;
-}
-.nav-arrow{
-    width:1rem;
-    height:1rem;
-
-    border-top:2px solid gray;
-    border-right:2px solid gray;
-    transform: rotate(225deg);
-}
-.nav-toggle:active .nav{
-    left:0rem;
-} */
-
-
 
 .content{
     width:100%;
@@ -191,10 +57,6 @@
     align-items:center;
     justify-content:space-around;
 
-    /* position:absolute;
-    bottom:5%;
-    left:35vw;
-    z-index:1; */
 }
 .social{
     width:1.5rem;
@@ -209,7 +71,7 @@
 }
 @media only screen and (max-width:800px){
     .title{
-        font-size:7rem;
+        font-size:20vw;
     }
     .socials{
         width:100%;
@@ -293,6 +155,47 @@
     font-size: 7rem;
     font-weight: 600;
 } */
+
+@keyframes anima{
+    0%{
+        height:10vh;
+    }
+    50%{
+        height:5vh;
+    }
+    100%{
+        height:10vh;
+    }
+}
+.anima{
+    width:30%;
+    height:20vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+
+    position:absolute;
+    bottom:3;
+    right:35;
+    z-index:2;
+}
+.arrow-pt{
+    width:1px;
+    height:10vh;
+
+    background:white;
+    animation:anima 2s ease-in-out;
+}
+.arrow-pta{
+    width:1rem;
+    height:1rem;
+    margin:0 0 2vh 0;
+
+    border-bottom:2px solid white;
+    border-left:2px solid white;
+    transform: rotate(315deg);
+}
 
 .s1{
     width:100%;
@@ -429,6 +332,11 @@
         height:auto;
         padding:10vh 0;
     }
+    .content2{
+        width:100%;
+        box-shadow:none;
+        background:white;
+    }
 }
 
 
@@ -484,4 +392,36 @@
     font-size: .875rem;
     font-style: italic;
 }
+@media only screen and (max-width:800px){
+    .content3{
+        width:100%;
+        height:50vh;
+        margin:0;
+        align-items:center;
+        box-shadow:none;
+    }
+    .opacity3{
+        align-items:center;
+        justify-content: center;
+        box-shadow:none;
+    }
+    .title3{
+        text-align:center;
+    }
+    .descr3{
+        text-align: center;
+    }
+}
 
+
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.logo,.title,.descr,.navs{
+    animation:fadeIn 2s ease;
+}
